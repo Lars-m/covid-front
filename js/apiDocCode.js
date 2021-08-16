@@ -1,0 +1,1 @@
+const setSwaggerLink = () => document.getElementById("swagger-link").href = API_DOC_URL;

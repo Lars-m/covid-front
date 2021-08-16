@@ -1,0 +1,81 @@
+<template id="parish-content">
+
+  <!-- Modal -->
+  <div class="modal fade" id="parishModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="parishModalTitle">Edit Sogn</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p>Sognekode: <span id="sogne-kode"></span></p>
+          <form>
+            <div class="mb-3">
+              <label for="input-navn" class="form-label">Navn på sogn</label>
+              <input type="text" class="form-control" id="input-navn">
+            </div>
+            <div class="mb-3">
+              <label for="input-smitte-tryk" class="form-label">Smittetryk</label>
+              <input type="text" class="form-control" id="input-smitte-tryk">
+            </div>
+            <div class="mb-3">
+              <label for="input-dato" class="form-label">Nedluknings Dato (dd-MM-yyyy)</label>
+              <input type="text" class="form-control" id="input-dato">
+            </div>
+            <div class="mb-3">
+              <label for="input-post-nummer" class="form-label">Postnummer (kommune)</label>
+              <input type="text" class="form-control" id="input-post-nummer">
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">cancel</button>
+          <button id="btn-save" type="button" class="btn btn-primary" data-bs-dismiss="modal">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <h3>Alle sogne i vores system </h3>
+  <img src="/img/loading.gif" id="spinner" style="visibility:hidden; width:50px;" />
+
+  <div style="height: 300px;overflow-y: scroll;">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Sognekode</th>
+          <th>Navn</th>
+          <th>Smittetryk</th>
+          <th>Nedluknings dato</th>
+          <th>Er Lukket</th>
+          <th>Kommune</th>
+          <th>Kommune Postnummer</th>
+          <th></th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody id="parish-body">
+      </tbody>
+    </table>
+  </div>
+  <button type="button" class="btn btn-primary" id="btn-add-parish">
+    Tilføj nyt sogn
+  </button>
+  <p id="add-error-msg" class="alert alert-danger" style="max-width: 50%;display: none;" role="alert"></p>
+</template>
+
+
+<template id="parish-rows">
+  <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td><a href="#">Delete</a> </td>
+    <td><a href="#">Edit</a> </td>
+  </tr>
+</template>
